@@ -1,0 +1,46 @@
+﻿{
+  "iisSettings": {
+    "windowsAuthentication": false, 
+    "anonymousAuthentication": true, 
+    "iisExpress": {
+      "applicationUrl": "http://localhost:29291",
+      "sslPort": 44372
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Sonaticket.Signalr": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DOMAIN":"highstreetly.work",
+        "NAMESPACE":"highstreetly-live",
+        "MAIN_API":"https://api.highstreetly.work",
+        "ORDERS_UI":"https://orders.highstreetly.live:4202",
+        "TICKETS_UI":"https://shop.highstreetly.live:4203",
+        "MAIN_UI":"https://highstreetly.live:4200",
+        "DASH_UI":"https://dashboard.highstreetly.live:4201",
+        "DASH_API":"https://api.dashboard.highstreetly.work",
+        "ORDERS_API":"https://api.orders.highstreetly.work",
+        "TICKETS_API":"https://api.shop.highstreetly.work",
+        "WIDGET_API":"https://api.widget.highstreetly.work",
+        "IDS":"https://ids.highstreetly.work",
+        "TLD":"link",
+        "A_RECORD":"highstreetly",
+        "MINIKUBE_IP":"192.168.99.108",
+        "env":"dev",
+        "DEV_API":"https://api.dev.highstreetly.work",
+        "ELASTIC_CONNECTION": "https://localhost:9200",
+        "ELASTIC_PASS": "51088GK611wyftK9dL9RHOOJ"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "Highstreetly.Management.Processor": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "env": "dev",
+        "MS_VS_AZUREDEVSPACES_TOOLS_LOGGING_ENABLED": "true",
+        "DEV_API": "https://api.dev.highstreetly.work",
+        "PAYLOAD_STORAGE_CONNECTION": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=xxxxx;AccountKey=xxxxx"
+
+      }
+    },
+    "Bridge to Kubernetes": {
+      "commandName": "AzureDevSpacesLocal"
+    }
+  }
+}

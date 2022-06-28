@@ -1,0 +1,43 @@
+{
+  "vault": {
+    "VaultUri": "http://vault-service:8200",
+    "RoleId": "318a5993-0ac4-060c-1583-d2c77fab3f89",
+    "SecretPath": "myapp/config"
+  },
+  "serviceDirectory": {
+    "IdentityServer": "https://ids.highstreetly.work",
+    "PaymentsApi": "http://sonatribe-payments-api",
+    "TicketManagementApi": "http://sonatribe-ticketmanagement-api",
+    "TicketReservationsApi": "http://sonatribe-ticketreservations-api",
+    "PermissionsApi": "http://sonatribe-permissions-api"
+  },
+  "ServiceBus": {
+    "Url": "rabbitmq://sonatribe-rabbitmq.highstreetly-live.svc.cluster.local",
+    "User": "sonatribe",
+    "Password": "sonatribe"
+  },
+  "EmailTemplate": {
+    "Registration": "d-2c26df73b12b49d38fb0835b015ee171",
+    "MagicLink": "d-73d78db3ed3e4914b92cdeb274c8f4c4",
+    "NoMagicLink": "d-73d78db3ed3e4914b92cdeb274c8f4c4",
+    "ForgotPassword": "d-73d78db3ed3e4914b92cdeb274c8f4c4",
+    "OrderInTheBag": "d-8843f98002e44985a0e58f5e3df0214b",
+    "OrderInTheBagOperator": "d-85aa11bdc4364d02a8bd436116af90c6",
+    "OrderProcessingComplete": "d-9fd20b95b6e042138b5f9b2a44a7cde1",
+    "OrderRefunded": "d-97d853d02b2b4009a493f8b66cdcde54",
+    "OrderProcessing": "d-43e29c5c3eb94e3cbeac05564345ff97",
+    "Generic": "d-73d78db3ed3e4914b92cdeb274c8f4c4"
+  },
+  "ConnectionStrings": {
+    "AuditConnection": "UserID=postgres;Password=XXXXXXXX;Host=192.168.1.170;Port=5432; Database=highstreet_ly_message_audit;",
+    "IdsConnection": "User ID=postgres;Password=XXXXXXXX;Host=192.168.1.170; Port=5432; Database=highstreet_ly_ids;",
+    "PaymentsConnection": "User ID=postgres;Password=XXXXXXXX;Host=192.168.1.170; Port=5432; Database=highstreet_ly_payments;",
+    "TicketManagementConnection": "User ID=postgres;Password=XXXXXXXX;Host=192.168.1.170; Port=5432; Database=highstreet_ly_ticket_management;",
+    "TicketreservationsConnection": "User ID=postgres;Password=XXXXXXXX;Host=192.168.1.170;  Port=5432; Database=highstreet_ly_ticket_reservations;",
+    "PermissionsConnection": "User ID=postgres;Password=XXXXXXXX;Host=192.168.1.170; Port=5432; Database=highstreet_ly_ids;",
+    "VaultConnection": "User ID=postgres;Password=XXXXXXXX;Host=192.168.1.170; Port=5432; Database=highstreet_ly_vault;",
+    "SchedulerConnection": "User ID=postgres;Password=XXXXXXXX;Host=192.168.1.170; Port=5432; Database=highstreet_ly_scheduler;",
+    "ElasticSearch": "https://app-elasticsearch-es-default.highstreetly-live.svc.cluster.local:9200"
+  },
+  "StripeApiKey": "xxxxxx",
+}

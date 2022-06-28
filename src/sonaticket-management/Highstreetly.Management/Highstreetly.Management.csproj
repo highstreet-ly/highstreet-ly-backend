@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="chargebee" Version="2.8.9" />
+    <PackageReference Include="FluentValidation" Version="9.3.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.3.0" />
+    <PackageReference Include="IdentityModel" Version="5.1.0" />
+    <PackageReference Include="JsonApiDotNetCore" Version="4.2.0" />
+    <PackageReference Include="libphonenumber-csharp" Version="8.12.34" />
+    <PackageReference Include="Marten" Version="4.0.0-rc.3" />
+    <PackageReference Include="MassTransit.Analyzers" Version="7.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="5.0.8" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.7" />
+    <PackageReference Include="SendGrid" Version="9.22.0" />
+    <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.2.2" />
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.2.2" />
+    <PackageReference Include="MassTransit.Quartz" Version="7.2.2" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="7.2.2" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="Twilio" Version="5.57.0" />
+    <PackageReference Include="Stripe.net" Version="39.40.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\sonaticket-infrastructure\Highstreetly.Infrastructure.Identity\Highstreetly.Infrastructure.Identity.csproj" />
+    <ProjectReference Include="..\..\sonaticket-infrastructure\Highstreetly.Infrastructure.StripeIntegration\Highstreetly.Infrastructure.StripeIntegration.csproj" />
+    <ProjectReference Include="..\..\sonaticket-payments\Highstreetly.Payments.Contracts\Highstreetly.Payments.Contracts.csproj" />
+    <ProjectReference Include="..\..\sonaticket-permissions\Highstreetly.Permissions.Contracts\Highstreetly.Permissions.Contracts.csproj" />
+    <ProjectReference Include="..\..\sonaticket-reservations\Highstreetly.Reservations.Contracts\Highstreetly.Reservations.Contracts.csproj" />
+    <ProjectReference Include="..\Highstreetly.Management.Contracts\Highstreetly.Management.Contracts.csproj" />
+    <ProjectReference Include="..\Highstreetly.Management.Resources\Highstreetly.Management.Resources.csproj" />
+  </ItemGroup>
+</Project>

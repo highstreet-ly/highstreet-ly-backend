@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Highstreetly.Payments.Processor": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "env": "dev",
+        "DEV_API": "https://api.dev.highstreetly.work",
+        "PAYLOAD_STORAGE_CONNECTION": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=xxxxx;AccountKey=xxxxx"
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Resources\**" />
+      <EmbeddedResource Remove="Resources\**" />
+      <None Remove="Resources\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="chargebee" Version="2.8.9" />
+      <PackageReference Include="FluentValidation" Version="9.3.0" />
+      <PackageReference Include="IdentityModel" Version="5.1.0" />
+      <PackageReference Include="JsonApiDotNetCore" Version="4.2.0" />
+      <PackageReference Include="libphonenumber-csharp" Version="8.12.34" />
+      <PackageReference Include="Marten" Version="4.0.0-rc.3" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.8" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+      <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="5.0.8" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.7" />
+      <PackageReference Include="SendGrid" Version="9.22.0" />
+      <PackageReference Include="Stripe.net" Version="39.40.0" />
+      <PackageReference Include="Twilio" Version="5.57.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\sonaticket-infrastructure\Highstreetly.Infrastructure.StripeIntegration\Highstreetly.Infrastructure.StripeIntegration.csproj" />
+      <ProjectReference Include="..\..\sonaticket-infrastructure\Highstreetly.Infrastructure.Web\Highstreetly.Infrastructure.Web.csproj" />
+      <ProjectReference Include="..\..\sonaticket-management\Highstreetly.Management.Contracts\Highstreetly.Management.Contracts.csproj" />
+      <ProjectReference Include="..\Highstreetly.Permissions.Resources\Highstreetly.Permissions.Resources.csproj" />
+    </ItemGroup>
+
+</Project>

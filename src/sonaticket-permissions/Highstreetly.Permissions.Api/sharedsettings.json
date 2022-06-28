@@ -1,0 +1,56 @@
+{
+  "vault": {
+    "VaultUri": "http://vault-service:8200",
+    "RoleId": "318a5993-0ac4-060c-1583-d2c77fab3f89",
+    "SecretPath": "myapp/config"
+  },
+  "serviceDirectory": {
+    "IdentityServer": "https://ids.highstreetly.xyz",
+    "sonatribe-payments-api": "https://api.dev.highstreetly.xyz",
+    "sonatribe-ticketmanagement-api": "https://api.dev.highstreetly.xyz",
+    "sonatribe-ticketreservations-api": "https://api.dev.highstreetly.xyz",
+    "sonatribe-permissions-api": "https://api.dev.highstreetly.xyz"
+  },
+  "ServiceBus": {
+    "Url": "rabbitmq://localhost:5672",
+    "User": "sonatribe",
+    "Password": "sonatribe"
+  },
+  "Slack": {
+    "SlackEnabled": true,
+    "SlackToken": ""
+  },
+  "EmailTemplate": {
+    "Registration": "d-2c26df73b12b49d38fb0835b015ee171",
+    "MagicLink": "d-73d78db3ed3e4914b92cdeb274c8f4c4",
+    "NoMagicLink": "d-73d78db3ed3e4914b92cdeb274c8f4c4",
+    "ForgotPassword": "d-73d78db3ed3e4914b92cdeb274c8f4c4",
+    "OrderInTheBag": "d-8843f98002e44985a0e58f5e3df0214b",
+    "OrderInTheBagOperator": "d-85aa11bdc4364d02a8bd436116af90c6",
+    "OrderProcessingComplete": "d-9fd20b95b6e042138b5f9b2a44a7cde1",
+    "OrderRefunded": "d-97d853d02b2b4009a493f8b66cdcde54",
+    "OrderProcessing": "d-43e29c5c3eb94e3cbeac05564345ff97",
+    "Generic": "d-73d78db3ed3e4914b92cdeb274c8f4c4"
+  },
+  "ConnectionStrings": {
+    "AuditConnection": "UserID=sonatribe;Password=XXXXXXXX;Host=infra-1;Port=5432; Database=highstreetly_xyz_message_audit;",
+    "IdsConnection": "User ID=sonatribe;Password=XXXXXXXX;Host=infra-1; Port=5432; Database=highstreetly_xyz_ids;",
+    "PaymentsConnection": "User ID=sonatribe;Password=XXXXXXXX;Host=infra-1; Port=5432; Database=highstreetly_xyz_payments;",
+    "TicketManagementConnection": "User ID=sonatribe;Password=XXXXXXXX;Host=infra-1; Port=5432; Database=highstreetly_xyz_ticket_management;",
+    "TicketreservationsConnection": "User ID=sonatribe;Password=XXXXXXXX;Host=infra-1;  Port=5432; Database=highstreetly_xyz_ticket_reservations;",
+    "PermissionsConnection": "User ID=sonatribe;Password=XXXXXXXX;Host=infra-1; Port=5432; Database=highstreetly_xyz_ids;",
+    "VaultConnection": "User ID=sonatribe;Password=XXXXXXXX;Host=infra-1; Port=5432; Database=highstreetly_xyz_vault;",
+    "SchedulerConnection": "User ID=sonatribe;Password=XXXXXXXX;Host=infra-1; Port=5432; Database=highstreetly_xyz_scheduler;",
+    "ElasticSearch": "https://app-elasticsearch-es-default.highstreetly-live.svc.cluster.local:9200"
+  },
+  "Twilio": {
+    "Sid": "xxxxxxx",
+    "AuthToken": "xxxxxx"
+  },
+  "ChargeBeeSite": "highstreetly-test",
+  "ChargeBeeKey": "xxxxxx",
+  "StripeApiKey": "xxxxxx",
+  "Ssl": {
+    "Path": "C:\\etc\\ssl\\sonaticket-certs\\"
+  }
+}

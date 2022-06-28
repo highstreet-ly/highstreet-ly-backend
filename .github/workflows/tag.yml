@@ -1,0 +1,98 @@
+name: Tag Build images
+on:
+  push:
+    tags:
+      - v* 
+jobs:
+  build: 
+    runs-on: ubuntu-latest 
+    steps:
+    - uses: actions/checkout@master
+
+    - id: get_version
+      uses: battila7/get-version-action@v2
+    - run: echo ${{ steps.get_version.outputs.version }}
+
+    - name: docker registry credentials
+      env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_USERNAME: sonatribe
+      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+
+    - name: package the things
+      run: find . \( -name "*.config" -o -name "*.csproj" -o -name "*.sln" -o -name "NuGet.config" -o -name "*.json" \) -print0 | tar -cvf projectfiles.tar --null -T -
+        
+        
+    # Logs clear
+    - name: Build the Docker image logs-clear
+      run: docker build  -t sonatribe/logs-cleaner:${{ steps.get_version.outputs.version }} --target logs-cleaner -f ./Dockerfile .
+    - name: push sonatribe/logs-cleaner
+      run: docker push sonatribe/logs-cleaner:${{ steps.get_version.outputs.version }}
+
+    # payments
+    - name: Build the Docker image paymentsapi
+      run: docker build -t sonatribe/paymentsapi:${{ steps.get_version.outputs.version }} --target payments-api -f ./Dockerfile .
+    - name: push sonatribe/paymentsapi
+      run: docker push sonatribe/paymentsapi:${{ steps.get_version.outputs.version }}
+    
+    - name: Build the Docker image paymentsprocessor
+      run: docker build  -t sonatribe/paymentsprocessor:${{ steps.get_version.outputs.version }} --target payments-processor -f ./Dockerfile .
+    - name: push sonatribe/paymentsprocessor
+      run: docker push sonatribe/paymentsprocessor:${{ steps.get_version.outputs.version }}
+
+    #reservations
+    - name: Build the Docker image reservationsapi
+      run: docker build -t sonatribe/reservationsapi:${{ steps.get_version.outputs.version }} --target reservations-api -f ./Dockerfile .
+    - name: push sonatribe/reservationsapi
+      run: docker push sonatribe/reservationsapi:${{ steps.get_version.outputs.version }}
+    
+    - name: Build the Docker image reservationsprocessor
+      run: docker build -t sonatribe/reservationsprocessor:${{ steps.get_version.outputs.version }} --target reservations-processor -f ./Dockerfile .
+    - name: push sonatribe/reservationsprocessor
+      run: docker push sonatribe/reservationsprocessor:${{ steps.get_version.outputs.version }}
+
+    #management
+    - name: Build the Docker image managementapi
+      run: docker build  -t sonatribe/managementapi:${{ steps.get_version.outputs.version }} --target management-api -f ./Dockerfile .
+    - name: push sonatribe/managementapi
+      run: docker push sonatribe/managementapi:${{ steps.get_version.outputs.version }}
+
+    - name: Build the Docker image managementprocessor
+      run: docker build -t sonatribe/managementprocessor:${{ steps.get_version.outputs.version }} --target management-processor -f ./Dockerfile .
+    - name: push sonatribe/managementprocessor
+      run: docker push sonatribe/managementprocessor:${{ steps.get_version.outputs.version }}
+
+    #permissions
+    - name: Build the Docker image permissionsapi
+      run: docker build  -t sonatribe/permissionsapi:${{ steps.get_version.outputs.version }} --target permissions-api -f ./Dockerfile .
+    - name: push sonatribe/permissionsapi
+      run: docker push sonatribe/permissionsapi:${{ steps.get_version.outputs.version }}
+
+    - name: Build the Docker image permissionsprocessor
+      run: docker build  -t sonatribe/permissionsprocessor:${{ steps.get_version.outputs.version }} --target permissions-processor -f ./Dockerfile .
+    - name: push sonatribe/permissionsprocessor
+      run: docker push sonatribe/permissionsprocessor:${{ steps.get_version.outputs.version }}
+
+    # infra services
+    - name: Build the Docker image bff
+      run: docker build  -t sonatribe/bff:${{ steps.get_version.outputs.version }} --target bff -f ./Dockerfile .
+    - name: push sonatribe/bff
+      run: docker push sonatribe/bff:${{ steps.get_version.outputs.version }}
+    
+    - name: Build the Docker image identityserver
+      run: docker build -t sonatribe/identityserver:${{ steps.get_version.outputs.version }} --target ids -f ./Dockerfile .
+    - name: push sonatribe/identityserver
+      run: docker push sonatribe/identityserver:${{ steps.get_version.outputs.version }}
+    
+    - name: Build the Docker image scheduler
+      run: docker build  -t sonatribe/scheduler:${{ steps.get_version.outputs.version }} --target scheduler -f ./Dockerfile .
+    - name: push sonatribe/scheduler
+      run: docker push sonatribe/scheduler:${{ steps.get_version.outputs.version }}
+      
+    - name: Build the Docker image signalr
+      run: docker build  -t sonatribe/signalr:${{ steps.get_version.outputs.version }} --target signalr -f ./Dockerfile .
+    - name: push sonatribe/signalr
+      run: docker push sonatribe/signalr:${{ steps.get_version.outputs.version }}
+
+    - name: cleanup
+      run: rm projectfiles.tar

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+
+        <PackageReference Include="JsonApiDotNetCore" Version="4.2.0" />
+
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Highstreetly.Payments.Contracts\Highstreetly.Payments.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>

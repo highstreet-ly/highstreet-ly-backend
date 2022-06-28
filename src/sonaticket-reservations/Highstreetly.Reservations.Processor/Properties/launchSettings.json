@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Highstreetly.Reservations.Processor": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "env": "dev",
+        "DEV_API": "https://api.dev.highstreetly.work"
+      }
+    },
+    "Bridge to Kubernetes": {
+      "commandName": "AzureDevSpacesLocal",
+      "launchBrowser": true
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="JsonApiDotNetCore" Version="4.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\sonaticket-infrastructure\Highstreetly.Infrastructure.Web\Highstreetly.Infrastructure.Web.csproj" />
+    <ProjectReference Include="..\Highstreetly.Reservations.Contracts\Highstreetly.Reservations.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

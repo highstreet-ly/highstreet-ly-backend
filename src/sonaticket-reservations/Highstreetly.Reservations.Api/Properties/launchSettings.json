@@ -1,0 +1,19 @@
+{
+  "profiles": {
+    "Highstreetly.Reservations.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "monitor/routes",
+      "environmentVariables": {
+        "env": "dev",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DEV_API": "https://api.dev.highstreetly.work"
+      },
+      "applicationUrl": "https://0.0.0.0:30004;http://0.0.0.0:8087"
+    },
+    "Bridge to Kubernetes": {
+      "commandName": "AzureDevSpacesLocal",
+      "launchBrowser": true
+    }
+  }
+}

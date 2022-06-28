@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Highstreetly.Permissions.Processor": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "Key": "Value",
+        "A_RECORD": "highstreetly.work",
+        "env": "dev",
+        "SENGRID_KEY": "****"
+      }
+    }
+  }
+}

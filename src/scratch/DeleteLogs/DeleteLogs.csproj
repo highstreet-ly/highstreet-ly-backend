@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+        <PackageReference Include="IdentityModel" Version="5.1.0" />
+        <PackageReference Include="MassTransit.Analyzers" Version="7.2.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
+        <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="6.11.1" />
+        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.11.1" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.7" />
+        <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+        <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+        <PackageReference Include="Serilog.Extensions.Hosting" Version="4.1.2" />
+        <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.2.2" />
+        <PackageReference Include="MassTransit.AspNetCore" Version="7.2.2" />
+        <PackageReference Include="MassTransit.Extensions.Logging" Version="5.5.6" />
+        <PackageReference Include="MassTransit.Quartz" Version="7.2.2" />
+        <PackageReference Include="MassTransit.RabbitMQ" Version="7.2.2" />
+        <PackageReference Include="Marten" Version="4.0.0-rc.3" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.0.0" />
+        <PackageReference Include="Serilog.Sinks.PostgreSQL" Version="2.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\sonaticket-management\Highstreetly.Management\Highstreetly.Management.csproj" />
+      <ProjectReference Include="..\..\sonaticket-payments\Highstreetly.Payments\Highstreetly.Payments.csproj" />
+      <ProjectReference Include="..\..\sonaticket-permissions\Highstreetly.Permissions\Highstreetly.Permissions.csproj" />
+      <ProjectReference Include="..\..\sonaticket-reservations\Highstreetly.Reservations\Highstreetly.Reservations.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="appsettings.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Include="sharedsettings.json">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
+</Project>
